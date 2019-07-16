@@ -1,7 +1,22 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, Button, TouchableWithoutFeedback} from 'react-native';
 
 export default class App extends Component{
+  state = {
+    content: "",
+    toogle: false,
+  };
+
+  handleToogle(a){
+    this.setState({
+      toogle: !this.state.toogle
+    });
+  }
+  handleSentuhan(arg){
+    this.setState({
+      content: arg
+    });
+  }
   render(){
     return (
       
@@ -11,53 +26,20 @@ export default class App extends Component{
         alignItems: 'center',
         width: '100%',
       }}>
-        <ScrollView style={{
-          width: '100%',
-        }}>
-        <View style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-        }}>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
-          <Text>Test</Text>
+      <Text>{this.state.content}</Text>
+      <Button 
+        onPress={ () => this.handleSentuhan('ini percobaan button')}
+        title="Cek Button"
+        color="#841584"
+      >
+      </Button>
+      <TouchableWithoutFeedback 
+        onPress={ () => this.handleToogle()}
+      >
+        <View style={{backgroundColor: this.state.toogle ? 'lime' : 'aqua'}}>
+          <Text>tOOGLE</Text>
         </View>
-        </ScrollView>
+      </TouchableWithoutFeedback>
       </View>
 
     );
