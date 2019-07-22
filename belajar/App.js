@@ -2,6 +2,7 @@ import React from "react";
 import {createStackNavigator, createAppContainer} from "react-navigation";
 import HomeScreen from "./Home";
 import DetailScreen from "./Detail";
+import LumenScreen from "./Lumen";
 
 const a = createStackNavigator({
   Home: {
@@ -9,6 +10,9 @@ const a = createStackNavigator({
   },
   Detail: {
     screen: DetailScreen
+  },
+  Lumen:{
+    screen: LumenScreen
   }
 }, {
   defaultNavigationOptions:{

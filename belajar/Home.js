@@ -11,19 +11,24 @@ const articles = [
     title: 'Ini Title 2', 
     excerpt: 'Ini Excerpt 2'
   },
+];
+const lumens = [
   {
-    title: 'Ini Title 3', 
-    excerpt: 'Ini Excerpt 3'
+    title: 'Ini Lumen 1', 
+    excerpt: 'Ini Lumen Excerpt 1'
   },
   {
-    title: 'Ini Title 4', 
-    excerpt: 'Ini Excerpt 4'
+    title: 'Ini Lumen 2', 
+    excerpt: 'Ini Lumen Excerpt 2'
   },
 ];
 
 export default class Home extends Component{
   keDetail(){
     this.props.navigation.navigate('Detail');
+  }
+  keLumen(){
+    this.props.navigation.navigate('Lumen');
   }
 
   render(){
@@ -42,6 +47,21 @@ export default class Home extends Component{
             <View style={style.article}>
               <Text style={style.title}>{article.item.title}</Text>
               <Text style={style.excerpt}>{article.item.excerpt}</Text>
+            </View>
+            </TouchableOpacity>
+          )}
+        />
+        <FlatList
+          data={lumens}
+          keyExtractor={(lumen, index) => index.toString()}
+          renderItem={(lumen) => (
+            <TouchableOpacity 
+              style={style.button}
+              onPress={() => this.keLumen()}
+            >
+            <View style={style.article}>
+              <Text style={style.title}>{lumen.item.title}</Text>
+              <Text style={style.excerpt}>{lumen.item.excerpt}</Text>
             </View>
             </TouchableOpacity>
           )}
