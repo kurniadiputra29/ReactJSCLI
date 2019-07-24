@@ -16,3 +16,5 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/category', 'CategoryController@index');
+$router->post('/category/create', 'CategoryController@create');
+$router->delete('/category/delete/{id}', 'CategoryController@delete');
