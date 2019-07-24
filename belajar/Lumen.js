@@ -1,24 +1,65 @@
 import React, {Component} from 'react';
-import {StyleSheet,  ActivityIndicator} from 'react-native';
+import {StyleSheet,  ActivityIndicator, TextInput, Button} from 'react-native';
 import {Container, Content, Text, View} from 'native-base';
 import Navbar from "./Navbar";
+import axios from 'axios';
 
 export default class Lumen extends Component{
   state = {
     loaded: false,
     categories: [],
+
+    form: '',
   }
 
   getData(){
-    fetch('http://root81.localhost.run/category')
-    .then((reponse)=>reponse.json())
-    .then((reponseJson)=>{
+    // fetch('http://root.localhost.run/category')
+    // .then((reponse)=>reponse.json())
+    // .then((reponseJson)=>{
+    //   this.setState({
+    //     loaded: true,
+    //     categories: reponseJson,
+    //   })
+    // })
+
+    axios('http://root.localhost.run/category')
+    .then((responseJson)=>{
       this.setState({
         loaded: true,
-        categories: reponseJson,
+        categories: responseJson.data,
       })
     })
   }
+
+  sendData(){
+    this.setState({loaded:false})
+
+    let dataKirim = {
+      name: this.state.form
+    }
+
+    axios.post('http://root.localhost.run/category/create', dataKirim)
+    .then((response)=>{
+      let hasil = JSON.stringify(response.data);
+      alert ("Data anda sudah terinput");
+      this.getData();
+    })
+    .then(()=>{
+      this.setState({loaded:true})
+    })
+    .catch((error) => {
+      let hasil = JSON.stringify(error);
+      alert(hasil);
+    })
+  }
+
+  handleInput(text){
+    this.setState({
+      form: text
+    })
+  }
+
+
   componentDidMount(){
     this.getData();
   }
@@ -45,6 +86,16 @@ export default class Lumen extends Component{
               <Text style={style.body}>{category.name}</Text>
             ))}
           </View>
+
+          <TextInput
+            style={{width: '100%', borderWidth: 1, borderColor: 'black'}}
+            onChangeText={(text)=>this.handleInput(text)}
+          />
+
+          <Button
+            title="Kirim Data"
+            onPress={()=> this.sendData()}
+          />
         </Content>
       </Container>
     )
