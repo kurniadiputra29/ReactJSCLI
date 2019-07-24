@@ -53,6 +53,16 @@ export default class Lumen extends Component{
     })
   }
 
+  deleteData(id){
+    this.setState({loaded:false})
+
+    axios.delete(`http://root.localhost.run/category/delete/${id}`)
+    .then((res)=>{
+      alert ("Data anda sudah terHapus");
+      this.getData();
+    })
+  }
+
   handleInput(text){
     this.setState({
       form: text
@@ -83,7 +93,7 @@ export default class Lumen extends Component{
         <Content>
           <View>
             {this.state.categories.map((category)=>(
-              <Text style={style.body}>{category.name}</Text>
+              <Text style={style.body} onPress={()=>this.deleteData(category.id)}>{category.name}</Text>
             ))}
           </View>
 

@@ -20,4 +20,8 @@ class CategoryController extends Controller
 
    		app('db')->table('category')->insert($data);
    }
+   public function delete($id)
+   {
+   		app('db')->table('category')->where('id', $id)->delete();
+   }
 }
