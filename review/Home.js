@@ -77,15 +77,15 @@ export default class Home extends Component{
 
 const s = StyleSheet.create({
   bottom:{
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop:5,
+    marginBottom: 5,
     alignItems: 'center',
   },
   article:{
     padding: 10,
     width: '95%',
     borderRadius: 10,
-    elevation: 3,
+    elevation: 2,
     alignItems: 'center',
   },
   title: {
