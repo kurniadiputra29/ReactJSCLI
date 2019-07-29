@@ -1,19 +1,23 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, ScrollView, Dimensions} from 'react-native';
+import {StyleSheet, View, Text, ScrollView, TouchableOpacity} from 'react-native';
 
 export default class Home extends Component{
+
+	toHorizontal(){
+			this.props.navigation.navigate('Horizontal');
+	}
+
 	render(){
 		return(
-			<ScrollView horizontal={true} pagingEnabled={true} style= {style.container}>
-				<View style={style.content1}>
-					<Text style={style.innerText}>Home 1</Text>
-				</View>
-				<View style={[style.content1, style.content2]}>
-					<Text style={style.innerText}>Home 2</Text>
-				</View>
-				<View style={[style.content1, style.content3]}>
-					<Text style={style.innerText}>Home 3</Text>
-				</View>
+			<ScrollView>
+			<View style={style.container}>
+				<TouchableOpacity 
+					style={style.buton}
+					onPress={()=> this.toHorizontal()}
+				>
+					<Text style={style.innerText}>Horizontal</Text>
+				</TouchableOpacity>
+			</View>
 			</ScrollView>
 		)
 	}
@@ -21,24 +25,20 @@ export default class Home extends Component{
 const style = StyleSheet.create({
 	container:{
 		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
-	content1:{
+	buton:{
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center', 
 		backgroundColor: '#007bb6',
-		width: Dimensions.get('window').width,
-		height: Dimensions.get('window').height,
+		padding: 10,
+		borderRadius: 15,
+		marginTop: 20,
+		width: '90%',
 	},
 	innerText:{
-		fontSize: 25,
-		color: '#fff',
-		fontWeight: 'bold',
-	},
-	content2:{
-		backgroundColor: '#eb9234',
-	},
-	content3:{
-		backgroundColor: '#3ed108',
+		color: 'white',
 	},
 })
