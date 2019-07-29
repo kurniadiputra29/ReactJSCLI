@@ -8,7 +8,6 @@ export default class Horizontal extends Component{
 				horizontal={true} 
 				pagingEnabled={true} 
 				style= {style.container}
-				title="Horizontal"
 			>
 				<View style={style.content1}>
 					<Text style={style.innerText}>Home 1</Text>
@@ -33,7 +32,6 @@ const style = StyleSheet.create({
 		alignItems: 'center', 
 		backgroundColor: '#007bb6',
 		width: Dimensions.get('window').width,
-		height: Dimensions.get('window').height,
 	},
 	innerText:{
 		fontSize: 25,
@@ -41,9 +39,9 @@ const style = StyleSheet.create({
 		fontWeight: 'bold',
 	},
 	content2:{
-		backgroundColor: '#eb9234',
+		backgroundColor: '#dd4b39',
 	},
 	content3:{
-		backgroundColor: '#3ed108',
+		backgroundColor: '#27ae60',
 	},
 })

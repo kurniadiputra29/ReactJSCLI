@@ -1,21 +1,31 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, ScrollView, TouchableOpacity, StatusBar} from 'react-native';
 
 export default class Home extends Component{
 
 	toHorizontal(){
 			this.props.navigation.navigate('Horizontal');
 	}
+	toLogin(){
+		this.props.navigation.navigate('Login');
+	}
 
 	render(){
 		return(
 			<ScrollView>
+			<StatusBar backgroundColor="#007bb6" barStyle="light-content" />
 			<View style={style.container}>
 				<TouchableOpacity 
 					style={style.buton}
 					onPress={()=> this.toHorizontal()}
 				>
 					<Text style={style.innerText}>Horizontal</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={style.buton}
+					onPress={()=>this.toLogin()}
+				>
+					<Text style={style.innerText}>Login</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>
