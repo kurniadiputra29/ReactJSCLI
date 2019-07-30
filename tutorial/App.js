@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text, StatusBar} from 'react-native';
 import {createStackNavigator, createAppContainer} from "react-navigation";
 import HomeScreen from './Components/Home';
-import HorizontalScreen from './Components/Horizontal';
-import LoginScreen from './Components/Login';
+import HorizontalScreen from './Components/Horizontal/Horizontal';
+import LoginScreen from './Components/Login/Login';
+import ShoppingScreen from './Components/Shopping/Shopping';
 
 const a = createStackNavigator({
   Home: {
@@ -35,6 +36,12 @@ const a = createStackNavigator({
       headerTitleStyle: {
         fontWeight: 'bold',
       },
+    }
+  },
+  Shopping: {
+    screen: ShoppingScreen,
+    navigationOptions:{
+      header: null
     }
   },
 })

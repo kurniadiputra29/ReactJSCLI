@@ -9,6 +9,9 @@ export default class Home extends Component{
 	toLogin(){
 		this.props.navigation.navigate('Login');
 	}
+	toShooping(){
+		this.props.navigation.navigate('Shopping');
+	}
 
 	render(){
 		return(
@@ -26,6 +29,12 @@ export default class Home extends Component{
 					onPress={()=>this.toLogin()}
 				>
 					<Text style={style.innerText}>Login</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={style.buton}
+					onPress={()=>this.toShooping()}
+				>
+					<Text style={style.innerText}>Shopping</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>
