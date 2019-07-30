@@ -5,6 +5,7 @@ import HomeScreen from './Components/Home';
 import HorizontalScreen from './Components/Horizontal/Horizontal';
 import LoginScreen from './Components/Login/Login';
 import ShoppingScreen from './Components/Shopping/Shopping';
+import GaleriScreen from './Components/Galeri/Galeri';
 
 const a = createStackNavigator({
   Home: {
@@ -44,6 +45,15 @@ const a = createStackNavigator({
       header: null
     }
   },
+  Galeri:{
+    screen: GaleriScreen,
+    navigationOptions:{
+      title: "Galeri",
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
+  }
 })
 
 const AppContainer = createAppContainer(a);

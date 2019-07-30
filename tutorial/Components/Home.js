@@ -12,6 +12,9 @@ export default class Home extends Component{
 	toShooping(){
 		this.props.navigation.navigate('Shopping');
 	}
+	toGaleri(){
+		this.props.navigation.navigate('Galeri');
+	}
 
 	render(){
 		return(
@@ -35,6 +38,12 @@ export default class Home extends Component{
 					onPress={()=>this.toShooping()}
 				>
 					<Text style={style.innerText}>Shopping</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={style.buton}
+					onPress={()=>this.toGaleri()}
+				>
+					<Text style={style.innerText}>Galeri</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>
