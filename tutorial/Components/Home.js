@@ -15,6 +15,9 @@ export default class Home extends Component{
 	toGaleri(){
 		this.props.navigation.navigate('Galeri');
 	}
+	toYoutube(){
+		this.props.navigation.navigate('Youtube');
+	}
 
 	render(){
 		return(
@@ -44,6 +47,12 @@ export default class Home extends Component{
 					onPress={()=>this.toGaleri()}
 				>
 					<Text style={style.innerText}>Galeri</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={style.buton}
+					onPress={()=>this.toYoutube()}
+				>
+					<Text style={style.innerText}>Youtube</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>

@@ -6,6 +6,7 @@ import HorizontalScreen from './Components/Horizontal/Horizontal';
 import LoginScreen from './Components/Login/Login';
 import ShoppingScreen from './Components/Shopping/Shopping';
 import GaleriScreen from './Components/Galeri/Galeri';
+import YoutubeScreen from './Components/Youtube/Youtube';
 
 const a = createStackNavigator({
   Home: {
@@ -53,7 +54,13 @@ const a = createStackNavigator({
         fontWeight: 'bold',
       },
     }
-  }
+  },
+  Youtube:{
+    screen: YoutubeScreen,
+    navigationOptions:{
+      header: null
+    }
+  },
 })
 
 const AppContainer = createAppContainer(a);
