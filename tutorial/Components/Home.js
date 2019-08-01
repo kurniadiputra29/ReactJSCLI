@@ -18,6 +18,9 @@ export default class Home extends Component{
 	toYoutube(){
 		this.props.navigation.navigate('Youtube');
 	}
+	toNativebase(){
+		this.props.navigation.navigate('Nativebase');
+	}
 
 	render(){
 		return(
@@ -53,6 +56,12 @@ export default class Home extends Component{
 					onPress={()=>this.toYoutube()}
 				>
 					<Text style={style.innerText}>Youtube</Text>
+				</TouchableOpacity>
+				<TouchableOpacity
+					style={style.buton}
+					onPress={()=>this.toNativebase()}
+				>
+					<Text style={style.innerText}>Nativebase</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>

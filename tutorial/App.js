@@ -7,6 +7,7 @@ import LoginScreen from './Components/Login/Login';
 import ShoppingScreen from './Components/Shopping/Shopping';
 import GaleriScreen from './Components/Galeri/Galeri';
 import YoutubeScreen from './Components/Youtube/Youtube';
+import NativebaseScreen from './Components/NativeBase/Nativebase';
 
 const a = createStackNavigator({
   Home: {
@@ -57,6 +58,12 @@ const a = createStackNavigator({
   },
   Youtube:{
     screen: YoutubeScreen,
+    navigationOptions:{
+      header: null
+    }
+  },
+  Nativebase:{
+    screen: NativebaseScreen,
     navigationOptions:{
       header: null
     }
