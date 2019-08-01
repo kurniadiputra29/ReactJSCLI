@@ -29,9 +29,6 @@ export default class Sidebar extends Component{
           <Button style={style.button} block danger>
             <Text>Danger</Text>
           </Button>
-          <Button style={style.button} block dark>
-            <Text>Dark</Text>
-          </Button>
           </View>
 		  </ScrollView>
       </View>
@@ -42,7 +39,7 @@ export default class Sidebar extends Component{
 const style=StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#c1c1c1',
     marginRight: 5,
     alignItems: 'center',
   },
@@ -60,7 +57,7 @@ const style=StyleSheet.create({
   topImage:{
     width: '95%',
     height: 150,
-    opacity: 0.7,
+    opacity: 0.8,
   },
   button:{
     marginTop: 20,

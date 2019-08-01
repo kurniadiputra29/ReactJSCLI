@@ -8,6 +8,7 @@ import ShoppingScreen from './Components/Shopping/Shopping';
 import GaleriScreen from './Components/Galeri/Galeri';
 import YoutubeScreen from './Components/Youtube/Youtube';
 import NativebaseScreen from './Components/NativeBase/Nativebase';
+import IGScreen from './Components/IG/IG';
 
 const a = createStackNavigator({
   Home: {
@@ -68,6 +69,12 @@ const a = createStackNavigator({
       header: null
     }
   },
+  IG: {
+    screen: IGScreen,
+    navigationOptions:{
+      header: null
+    }
+  }
 })
 
 const AppContainer = createAppContainer(a);

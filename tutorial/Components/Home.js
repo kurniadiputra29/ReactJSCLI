@@ -21,6 +21,9 @@ export default class Home extends Component{
 	toNativebase(){
 		this.props.navigation.navigate('Nativebase');
 	}
+	toIG(){
+		this.props.navigation.navigate('IG');
+	}
 
 	render(){
 		return(
@@ -62,6 +65,12 @@ export default class Home extends Component{
 					onPress={()=>this.toNativebase()}
 				>
 					<Text style={style.innerText}>Nativebase</Text>
+				</TouchableOpacity>
+				<TouchableOpacity 
+					style={style.buton}
+					onPress={()=>this.toIG()}
+				>
+					<Text style={style.innerText}>IG</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>
