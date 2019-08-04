@@ -48,7 +48,7 @@ export default class ReactnativeElements extends Component{
 						<Card
 							style={{height: 200}}
 							title={null}
-							image={{url: rowData.imageUrl }}
+							image={{uri: rowData.imageUrl }}
 							containerStyle={{padding: 0, width: 160, height: 200, marginTop: 150}}
 						>
 						<Text style={{marginBottom: 10}}>{rowData.title}</Text>
