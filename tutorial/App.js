@@ -9,6 +9,8 @@ import GaleriScreen from './Components/Galeri/Galeri';
 import YoutubeScreen from './Components/Youtube/Youtube';
 import NativebaseScreen from './Components/NativeBase/Nativebase';
 import IGScreen from './Components/IG/IG';
+import ReactnativeElements from './Components/ReactnativeElements/ReactnativeElements';
+import ListItems from './Components/ListItems/ListItems';
 
 const a = createStackNavigator({
   Home: {
@@ -74,7 +76,25 @@ const a = createStackNavigator({
     navigationOptions:{
       header: null
     }
-  }
+  },
+  ReactnativeElements:{
+    screen: ReactnativeElements,
+    navigationOptions:{
+      title: "ReactnativeElements",
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
+  },
+  ListItems:{
+    screen: ListItems,
+    navigationOptions:{
+      title: "ListItems",
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
+  },
 })
 
 const AppContainer = createAppContainer(a);

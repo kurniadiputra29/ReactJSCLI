@@ -24,6 +24,12 @@ export default class Home extends Component{
 	toIG(){
 		this.props.navigation.navigate('IG');
 	}
+	toReactnativeElements(){
+		this.props.navigation.navigate('ReactnativeElements');
+	}
+	toListItems(){
+		this.props.navigation.navigate('ListItems');
+	}
 
 	render(){
 		return(
@@ -71,6 +77,18 @@ export default class Home extends Component{
 					onPress={()=>this.toIG()}
 				>
 					<Text style={style.innerText}>IG</Text>
+				</TouchableOpacity>
+				<TouchableOpacity 
+					style={style.buton}
+					onPress={()=>this.toReactnativeElements()}
+				>
+					<Text style={style.innerText}>ReactnativeElements</Text>
+				</TouchableOpacity>
+				<TouchableOpacity 
+					style={style.buton}
+					onPress={()=>this.toListItems()}
+				>
+					<Text style={style.innerText}>ListItems</Text>
 				</TouchableOpacity>
 			</View>
 			</ScrollView>
